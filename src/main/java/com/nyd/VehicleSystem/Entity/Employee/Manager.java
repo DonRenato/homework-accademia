@@ -1,6 +1,6 @@
 package com.nyd.VehicleSystem.Entity.Employee;
 
-public class Manager extends Employee  {
+public class Manager extends Employee implements Authorization  {
 
     private String password = "123456";
 
@@ -8,7 +8,7 @@ public class Manager extends Employee  {
         return password;
     }
 
-
+    @Override
     public int authorization(String password){
         if(password.equals(this.password)){
             return 0;
